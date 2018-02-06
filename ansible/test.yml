@@ -1,18 +1,7 @@
-
- ##playbook starts here
+---
+## playbook starts here
 - hosts: localhost
   become: false
   gather_facts: false
-
-## tasks start here
-  tasks:
-      - name: Create file
-        shell: touch /tmp/{{ filename }}
-
-      - name: Add content to it
-        blockinfile:
-         path: /tmp/{{ filename }}
-         block: "{{ filecontent }}"
-
-      - name: Delete file
-        shell: rm /tmp/{{ filename }}
+  roles:
+      - filecontents

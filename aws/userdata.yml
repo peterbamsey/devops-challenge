@@ -1,0 +1,5 @@
+#!/bin/bash
+sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
+sudo service sshd restart
+useradd -d /home/thirdbridge -m thirdbridge
+echo 123456 | sudo passwd --stdin thirdbridge

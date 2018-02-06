@@ -1,0 +1,11 @@
+---
+- name: Create file
+  shell: touch /tmp/{{ filename }}
+
+- name: Add content to it
+  blockinfile:
+    path: /tmp/{{ filename }}
+    block: "{{ filecontent }}"
+
+- name: Delete file
+  shell: rm /tmp/{{ filename }}
